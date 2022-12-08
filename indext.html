@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #carousel {
+        overflow: hidden;
+        width: 400px;
+        height: 400px;
+        position: relative;
+    }
+    .imgContainer {
+        width: 500px;
+        height: 500px;
+        margin: 100px auto;
+        background-color: red;
+        border: 1px solid black;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+    .arrow {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        display: block;
+        position: absolute;
+        top: 45%;
+        background-color: #fff;
+        cursor: pointer;
+        z-index: 100;
+    }
+    #rigthArrow {
+        right: 0;
+        top: 45%;
+    }
+    #imagesFromApi{
+        position: relative;
+        width: 100%;
+        margin: auto;
+    }
+    #myCreatedImg{
+        width: 100%;
+        height: 100%;
+        flex: 1 0 100%;
+    }
+</style>
+<body>
+    <div id="carousel">
+        <img src="/arrow-left.svg" class="arrow" alt="" id="leftArrow" />
+        <img  src="/arrow-right.svg" class="arrow" id="rigthArrow"></img>
+        <div id="imagesFromApi">
+          
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
