@@ -3,11 +3,13 @@ let imagesFromApi = document.getElementById('imagesFromApi');
 let myCreatedImg = document.getElementById('myCreatedImg');
 const leftArrow = document.getElementById('leftArrow');
 const rigthArrow = document.getElementById('rigthArrow');
+const loadingIcon = document.querySelector('.loading');
 
 const url = 'https://picsum.photos/500/500'
 let imagesArr = []
-
+loadingIcon.style.display = 'block'
 async function newImage() {
+    loadingIcon.style.display = 'none'
     await axios.get(url)
     .then(res => {
         imagesArr.push(res.request.responseURL);
@@ -53,5 +55,6 @@ const interval = setInterval(async() => {
     if(imagesArr.length === 6) {
         imagesArr.shift(imagesArr[0])
     }
+    loadingIcon.style.display = 'block'
     newImage()
-}, 5000);
+}, 3000);
